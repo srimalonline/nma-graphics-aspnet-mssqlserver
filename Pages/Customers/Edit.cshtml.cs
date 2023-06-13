@@ -15,8 +15,8 @@ namespace nma_graphics.Pages.Customers
 
             try
             {
-                String conectionString = "Data Source=DESKTOP-DKT6IOK\\SQLEXPRESS;Initial Catalog=NMA_Graphics;Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection(conectionString))
+                var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     String sql = "SELECT * FROM customers WHERE customerid=@id";

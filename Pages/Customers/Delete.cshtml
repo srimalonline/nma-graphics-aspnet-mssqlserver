@@ -6,8 +6,8 @@
     {
         String id = Request.Query["id"];
 
-        string conncectionString = "Data Source=DESKTOP-DKT6IOK\\SQLEXPRESS;Initial Catalog=NMA_Graphics;Integrated Security=True";
-        using (SqlConnection connection = new SqlConnection(conncectionString))
+        var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
+        using (SqlConnection connection = new SqlConnection(connectionString))
         {
             connection.Open();
 

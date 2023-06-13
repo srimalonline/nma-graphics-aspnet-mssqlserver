@@ -11,7 +11,8 @@ namespace nma_graphics.Pages.Customers
         {
             try
             {
-                String connectionString = "Data Source=DESKTOP-DKT6IOK\\SQLEXPRESS;Initial Catalog=NMA_Graphics;Integrated Security=True";
+                //String connectionString = "Data Source=DESKTOP-DKT6IOK\\SQLEXPRESS;Initial Catalog=NMA_Graphics;Integrated Security=True";
+                var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING"); 
                 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
