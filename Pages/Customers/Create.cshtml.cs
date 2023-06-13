@@ -28,8 +28,8 @@ namespace nma_graphics.Pages.Customers
             // save the new client into the database
             try
             {
-                String conectionString = "Data Source=DESKTOP-DKT6IOK\\SQLEXPRESS;Initial Catalog=NMA_Graphics;Integrated Security=True";
-                using (SqlConnection connection = new SqlConnection(conectionString))
+                var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
                     String sql = "INSERT INTO customers " +
