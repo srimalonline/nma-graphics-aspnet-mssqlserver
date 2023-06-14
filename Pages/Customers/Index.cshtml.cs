@@ -7,8 +7,12 @@ namespace nma_graphics.Pages.Customers
     public class IndexModel : PageModel
     {
         public List<CustomerInfo> ListCustomers = new List<CustomerInfo>();
+        public String errorMessage = "";
+        public String successMessage = "";
+        public String search = "";
         public void OnGet()
         {
+            search = Request.Query["search"];
             try
             {
                 //String connectionString = "Data Source=DESKTOP-DKT6IOK\\SQLEXPRESS;Initial Catalog=NMA_Graphics;Integrated Security=True";
@@ -17,7 +21,7 @@ namespace nma_graphics.Pages.Customers
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM customers";
+                    String sql = "SELECT * FROM customers WHERE name LIKE '%"+@search+ "%'";
                     using (SqlCommand command = new SqlCommand(sql, connection)) 
                     {
                         using(SqlDataReader reader = command.ExecuteReader())
@@ -33,6 +37,10 @@ namespace nma_graphics.Pages.Customers
 
                                 ListCustomers.Add(ci);
 
+                            }
+                            if(ListCustomers.Count() == 0)
+                            {
+                                errorMessage = "Any Customer was not found with name " + search;
                             }
                         }
                     }
