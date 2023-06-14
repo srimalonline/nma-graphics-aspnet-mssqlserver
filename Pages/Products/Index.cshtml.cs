@@ -18,21 +18,19 @@ namespace nma_graphics.Pages.Products
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM Products";
+                    String sql = "SELECT * FROM products";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
-                                ProductInfo ci = new ProductInfo();
-                                ci.id = "" + reader.GetInt32(0);
-                                ci.name = reader.GetString(1);
-                                ci.contactno = reader.GetString(2);
-                                ci.address = reader.GetString(3);
-                                ci.email = reader.GetString(4);
+                                ProductInfo pi = new ProductInfo();
+                                pi.id = "" + reader.GetInt32(0);
+                                pi.productdes = reader.GetString(1);
+                                pi.unitprice = (int)reader.GetDecimal(2);
 
-                                ListProducts.Add(ci);
+                                ListProducts.Add(pi);
 
                             }
                         }
@@ -49,9 +47,7 @@ namespace nma_graphics.Pages.Products
     public class ProductInfo
     {
         public String id;
-        public String name;
-        public String contactno;
-        public String address;
-        public String email;
+        public String productdes;
+        public int unitprice;
     }
 }

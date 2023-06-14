@@ -9,10 +9,8 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Contact Number</th>
-            <th>Address</th>
-            <th>email</th>
+            <th>Product Name</th>
+            <th>Unit Price</th>
             <th>Action</th>
 
         </tr>
@@ -22,10 +20,8 @@
         {
             <tr>
                 <td>@item.id</td>
-                <td>@item.name</td>
-                <td>@item.contactno</td>
-                <td>@item.address</td>
-                <td>@item.email</td>
+                <td>@item.productdes</td>
+                <td align="right">@item.unitprice .00 LKR</td>
                 <td>
                     <a class="btn btn-primary btn-sm" href="/Products/Edit?id=@item.id">Edit</a>
                     <a class="btn btn-danger btn-sm" href="/Products/Delete?id=@item.id">Delete</a>
