@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using nma_graphics.Pages.Customers;
 using nma_graphics.Pages.Products;
 using System.Data.SqlClient;
 
@@ -8,17 +9,20 @@ namespace nma_graphics.Pages.Products
     public class IndexModel : PageModel
     {
         public List<ProductInfo> ListProducts = new List<ProductInfo>();
+        public String errorMessage = "";
+        public String successMessage = "";
+        public String search = "";
         public void OnGet()
         {
+            search = Request.Query["search"];
             try
             {
-                //String connectionString = "Data Source=DESKTOP-DKT6IOK\\SQLEXPRESS;Initial Catalog=NMA_Graphics;Integrated Security=True";
                 var connectionString = Environment.GetEnvironmentVariable("CONNECTION_STRING");
-
+                
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM products";
+                    String sql = "SELECT * FROM products WHERE productdes LIKE '%" + @search + "%'";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -32,6 +36,10 @@ namespace nma_graphics.Pages.Products
 
                                 ListProducts.Add(pi);
 
+                            }
+                            if (ListProducts.Count() == 0)
+                            {
+                                errorMessage = "Any Product was not found with name " + search;
                             }
                         }
                     }
