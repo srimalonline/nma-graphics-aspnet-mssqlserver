@@ -40,7 +40,7 @@ namespace nma_graphics.Pages.Customers
                             }
                             if(ListCustomers.Count() == 0)
                             {
-                                errorMessage = "Any Customers was not found with name " + search;
+                                errorMessage = "Any Customer was not found with name " + search;
                             }
                         }
                     }
