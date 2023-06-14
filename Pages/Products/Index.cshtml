@@ -5,7 +5,7 @@
 <br />
 <h2> list of Products</h2>
 
-<div class="row justify-content-between">
+<div class="row justify-content-between w-75">
     <form method="get" class="col-sm-6">
         <div class="input-group md-form form-sm form-2 pl-0 col-sm-3">
             <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search" name="search" value="@Model.search">
@@ -19,7 +19,7 @@
             </div>
         </div>
     </form>
-    <a class="btn btn-primary col-sm-3" asp-page='/Products/Create'>New Products</a>
+    <a class="btn btn-primary col-sm-3" asp-page='/Products/Create'>New Product</a>
 </div>
 
 <br />
@@ -30,12 +30,12 @@
         <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>
     </div>
 }
-<table class="table">
+<table class="table w-75">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Product Name</th>
-            <th>Unit Price</th>
+            <th class="col-sm-1">ID</th>
+            <th class="col-sm-3">Product Name</th>
+            <th class="col-sm-2" align="right">Unit Price</th>
             <th>Action</th>
 
         </tr>
