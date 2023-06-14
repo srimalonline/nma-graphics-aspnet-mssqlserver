@@ -5,7 +5,32 @@
 
 <br />
 <h2> list of Customers</h2>
-<a class="btn btn-primary btn-sm" href='/Customers/Create'>New Customers</a>
+<div class="row justify-content-between">
+    <form method="get" class="col-sm-6">
+            <div class="input-group md-form form-sm form-2 pl-0 col-sm-3">
+            <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search" name="search" value="@Model.search">
+            <div class="input-group-append border-1">
+                <button type="submit">
+                <span class="input-group-text lime lighten-2 border-1" id="basic-text1">
+                    <i class="fas fa-search text-grey"
+                       aria-hidden="true"></i>
+                </span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <a class="btn btn-primary col-sm-3" href='/Customers/Create'>New Customers</a>
+</div>
+
+<br />
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="row mb-3 alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>
+    </div>
+}
+
 <table class="table">
     <thead>
         <tr>
