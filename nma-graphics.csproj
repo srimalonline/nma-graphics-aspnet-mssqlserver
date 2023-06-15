@@ -8,8 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Pages\Orders\**" />
+    <Content Remove="Pages\Orders\**" />
+    <EmbeddedResource Remove="Pages\Orders\**" />
+    <None Remove="Pages\Orders\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.IdentityModel.Xml" Version="6.31.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\Orders\" />
   </ItemGroup>
 
 </Project>
