@@ -2,3 +2,60 @@
 @model nma_graphics.Pages.Dashboard.IndexModel
 @{
 }
+<br />
+<h2> Customer Order history</h2>
+<div class="row justify-content-between">
+    <form method="get" class="col-sm-6">
+        <div class="input-group md-form form-sm form-2 pl-0 col-sm-3">
+            <input class="form-control my-0 py-1 lime-border" type="text" placeholder="Search" aria-label="Search" name="search" value="@Model.search">
+            <div class="input-group-append border-1">
+                <button type="submit">
+                    <span class="input-group-text lime lighten-2 border-1" id="basic-text1">
+                        <i class="fas fa-search text-grey"
+                           aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <a class="btn btn-primary col-sm-2" href='/Customers/Create'>New Customers</a>
+</div>
+
+<br />
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="row mb-3 alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>@Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" arial-label="Close"></button>
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Customer Name</th>
+            <th>Product</th>
+            <th>Units</th>
+            <th>Order Deliver Date</th>
+            <th>Total Amount</th>
+            <th>Action</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListCustomerHistory)
+        {
+            <tr>
+                <td>@item.name</td>
+                <td>@item.productdes</td>
+                <td>@item.units</td>
+                <td>@item.order_deliver_date.ToShortDateString()</td>
+                <td>@item.total .00 LKR</td>
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Customers/Edit?id=@item.orderid">Edit</a>
+                    @*<a class="btn btn-danger btn-sm" href="/Customers/Delete?id=@item.orderid">Delete</a>*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
