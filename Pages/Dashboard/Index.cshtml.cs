@@ -22,7 +22,7 @@ namespace nma_graphics.Pages.Dashboard
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM customershistory WHERE name LIKE '%" + @search + "%' ORDER BY orderid desc ";
+                    String sql = "SELECT * FROM customershistory WHERE name LIKE '%" + @search + "%' ORDER BY orderid desc";
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
