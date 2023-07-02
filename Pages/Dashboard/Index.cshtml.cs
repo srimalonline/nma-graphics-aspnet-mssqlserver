@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace nma_graphics.Pages.Dashboard
 {
     public class IndexModel : PageModel
@@ -66,5 +67,9 @@ namespace nma_graphics.Pages.Dashboard
         public int units;
         public DateTime order_deliver_date;
         public int total;
+    }
+        public void OnGet()
+        {
+        }
     }
 }
