@@ -68,8 +68,4 @@ namespace nma_graphics.Pages.Dashboard
         public DateTime order_deliver_date;
         public int total;
     }
-        public void OnGet()
-        {
-        }
-    }
 }
