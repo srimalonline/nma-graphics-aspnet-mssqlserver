@@ -15,7 +15,7 @@
       "applicationUrl": "http://localhost:5004",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "CONNECTION_STRING": "Data Source=DESKTOP-DKT6IOK\\SQLEXPRESS;Initial Catalog=NMA_Graphics;Integrated Security=True"
+        "CONNECTION_STRING": "Data Source=DESKTOP-DKT6IOK\\SQLEXPRESS;Initial Catalog=NMAGraphics;Integrated Security=True"
       }
     },
     "IIS Express": {
@@ -23,7 +23,7 @@
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "CONNECTION_STRING": "Data Source=DESKTOP-DKT6IOK\\SQLEXPRESS;Initial Catalog=NMA_Graphics;Integrated Security=True"
+        "CONNECTION_STRING": "Data Source=DESKTOP-DKT6IOK\\SQLEXPRESS;Initial Catalog=NMAGraphics;Integrated Security=True"
       }
     }
   }
