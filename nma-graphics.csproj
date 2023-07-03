@@ -15,12 +15,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Include="Pages\Orders\Create.cshtml.cs" />
+    <Compile Include="Pages\Orders\Index1.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.IdentityModel.Xml" Version="6.31.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Orders\" />
+    <None Include="Pages\Orders\Create.cshtml" />
+    <None Include="Pages\Orders\Index1.cshtml" />
   </ItemGroup>
 
 </Project>
