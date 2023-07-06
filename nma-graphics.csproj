@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Compile Include="Pages\Orders\Create.cshtml.cs" />
+    <Compile Include="Pages\Orders\OrderHistory.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +26,7 @@
 
   <ItemGroup>
     <None Include="Pages\Orders\Create.cshtml" />
+    <None Include="Pages\Orders\OrderHistory.cshtml" />
   </ItemGroup>
 
 </Project>
