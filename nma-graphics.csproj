@@ -18,6 +18,7 @@
     <Compile Include="Pages\Orders\Create.cshtml.cs" />
     <Compile Include="Pages\Orders\Edit.cshtml.cs" />
     <Compile Include="Pages\Orders\OrderHistory.cshtml.cs" />
+    <Compile Include="Pages\Orders\OrderIndex.cshtml.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +30,7 @@
     <None Include="Pages\Orders\Create.cshtml" />
     <None Include="Pages\Orders\Edit.cshtml" />
     <None Include="Pages\Orders\OrderHistory.cshtml" />
+    <None Include="Pages\Orders\OrderIndex.cshtml" />
   </ItemGroup>
 
 </Project>
